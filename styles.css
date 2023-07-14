@@ -1,0 +1,305 @@
+/* _________________________Master styles_________________________ */
+body{
+    /* margin>border>padding */
+    font-family: "Montserrat", sans-serif;
+    margin: 0px;
+}
+
+.container {
+    display: grid;
+    /* creates rows, 1fr means it takes up 100% of horizontal space*/
+    grid-template-columns: 1fr;
+}
+
+/* _________________________Nav styles_________________________ */
+.nav-wrapper{
+    /* positions the divs next to each other */
+    display: flex;
+    /* positions the divs on each side of the page */
+    justify-content: space-between;
+    /* margin>border>padding */
+    padding: 38px;
+}
+
+.left-side {
+    /* positions the divs next to each other */
+    display: flex;
+}
+
+.nav-wrapper > .left-side > div {
+    /* space between the divs */
+    margin-right: 20px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+  
+.nav-link-wrapper {
+    height: 22px;
+    border-bottom: 1px solid transparent;
+    /* animation of border-bottom */
+    transition: border-bottom 0.5s;
+}
+
+.nav-link-wrapper a {
+    color: #8a8a8a;
+    /* no underline */
+    text-decoration: none;
+    /* animation of color */
+    transition: color 0.5s;
+}
+
+.nav-link-wrapper:hover {
+    border-bottom: 1px solid black;
+}
+
+.nav-link-wrapper a:hover {
+    color: black;
+}
+
+.active-nav-link {
+    border-bottom: 1px solid black;
+}
+
+.active-nav-link a {
+    color: black !important;
+}
+
+/* _________________________Portfolio styles_________________________ */
+.portfolio-items-wrapper {
+    display: grid;
+    /* splits the row into thirds */
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.portfolio-item-wrapper {
+    /* required if you want position:absolute elements nested inside */
+    position: relative;
+}
+
+.portfolio-img-background {
+    /* crops images to make them same size */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 350px;
+    width: 100%;
+}
+
+.img-text-wrapper {
+    /* forcing it to be in a position where it usually isn't */
+    position: absolute;
+    /* goes to very top */
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    /* left to right centering */
+    justify-content: center;
+    /* top to bottom centering */
+    align-items: center;
+    height: 100%;
+    text-align: center;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.img-text-wrapper .subtitle {
+    transition: 1s;
+    font-weight: 600;
+    color: transparent;
+}
+
+.img-text-wrapper:hover .subtitle {
+    color: lightseagreen;
+    font-weight: 600;
+}
+.img-text-wrapper a{
+    /* takes the underline off the project links  */
+    text-decoration: none;
+}
+
+.image-blur {
+    transition: 1s;
+    filter: brightness(30%);
+}
+
+/* _________________________About styles_________________________ */
+.two-column-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.profile-image-wrapper img {
+    width: 70%;
+    padding: 50px;
+}
+
+.profile-content-wrapper {
+    padding: 30px;
+}
+  
+.profile-content-wrapper h1 {
+    color: lightseagreen;
+}
+
+/* _________________________Project styles_________________________ */
+
+.project-title-wrapper{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.project-description-wrapper{
+    padding: 30px;
+    font-size: 0.95rem;
+}
+
+.project-description-wrapper h1 {
+    color: silver;
+}
+
+.LEDgame-image1-wrapper img{
+    width: 85%;
+    padding: 50px;
+}
+
+.shelf-image1-wrapper img{
+    width: 85%;
+    padding: 50px;
+}
+
+
+.robot-image1-wrapper img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    padding: 50px;
+}
+
+/* _________________________Physics styles_________________________ */
+.physics-wrapper{
+    /* positions the divs next to each other */
+    display: block;
+    /* margin>border>padding */
+    padding: 40px;
+    margin-left: 40px;
+}
+
+.physics-link-wrapper a{
+    color: #8a8a8a;
+    /* no underline */
+    text-decoration: none;
+    /* animation of color */
+    transition: color 0.5s;
+}
+
+.physics-link-wrapper a:hover {
+    color: black;
+}
+
+.physics-wrapper h1 {
+    color: lightseagreen;
+}
+
+/* _________________________Tab Gallery styles_________________________ */
+
+/* ______________Shelf______________ */
+/* The grid: Four equal columns that floats next to each other */
+.shelf-column {
+    float: left;
+    width: 14.2857%;
+}
+  
+/* Style the images inside the grid */
+.shelf-column img {
+    opacity: 0.8;
+    cursor: pointer;
+    height: 206px;
+    width: 206px;
+}
+  
+.shelf-column img:hover {
+    opacity: 1;
+}
+
+/* ______________LED Game______________ */
+/* The grid: Four equal columns that floats next to each other */
+.LEDgame-column {
+    float: left;
+    width: 12.5%;
+}
+  
+/* Style the images inside the grid */
+.LEDgame-column img {
+    opacity: 0.8;
+    cursor: pointer;
+    height: 180px;
+    width: 180px;
+}
+  
+.LEDgame-column img:hover {
+    opacity: 1;
+}
+
+/* ______________Robot______________ */
+/* The grid: Four equal columns that floats next to each other */
+.robot-column {
+    float: left;
+    width: 25%;
+}
+  
+/* Style the images inside the grid */
+.robot-column img {
+    opacity: 0.8;
+    cursor: pointer;
+    height: 360px;
+    width: 360px;
+}
+  
+.robot-column img:hover {
+    opacity: 1;
+}
+
+/* ______________All______________ */
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+  
+/* The expanding image container (positioning is needed to position the close button and the text) */
+.expanded-wrapper {
+    position: relative;
+    display: none;
+}
+
+.expanded-wrapper img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    padding: 20px;
+}
+  
+/* Expanding image text */
+#imgtext {
+    position: absolute;
+    bottom: 25px;
+    left: 440px;
+    color: silver;
+    font-size: 20px;
+}
+
+/* Closable button inside the image */
+.closebtn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: Black;
+    font-size: 35px;
+    cursor: pointer;
+}

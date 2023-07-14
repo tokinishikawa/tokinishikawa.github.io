@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='UTF-8'>
+    <title>Wooden Shelf</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="nav-wrapper">
+            <div class="left-side">
+                <div class="nav-link-wrapper active-nav-link">
+                    <a href="index.html">Engineering</a>
+                </div>
+
+                <div class="nav-link-wrapper">
+                    <a href="physics.html">Physics</a>
+                </div>
+
+                <div class="nav-link-wrapper">
+                    <a href="about.html">About</a>
+                </div>
+            </div>
+
+            <div class="right-side">
+                <div class="brand">
+                    <div>TOKI NISHIKAWA</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-wrapper">
+            <div class="project-title-wrapper">
+                <h1>Wooden Shelf</h1>
+            </div>
+            <div class="two-column-wrapper">
+                <div class="project-description-wrapper">
+                    <h1>Project Description</h1>
+                    <p>In my Senior Design Project course, we were challenged to design and construct a shelf from a single plank of wood with dimensions 4’ x 7” x 1”. Instead of going for something practical, I decided to make something a little funky. My shelf is designed to make it look like there are floating books. I ripped out all 300 million pages of a calculus textbook in order to stuff it with wood that would make up the base of the shelf. I chose to use a textbook because these are really the only books I own – in the image on the right, you can see the shelf storing some of my physics textbooks. One of my goals for this project was to use as much of the wood as I possibly could (I was able to use the entire plank).</p>
+                    <p>Below, you can find images of my initial sketch of the shelf, although the dimensions listed are incorrect, and a sketch of the wooden plank with markings for the cuts I was planning to make. There are some other sketches in this second photo – the two at the top of the page show the two layers of wood that were inserted into the textbook cover for the base of the shelf. Each rectangular wooden structure is made up of different components, i.e. the one on the left has four corner pieces whereas the one on the right has four edge pieces. As a result, the connections between wooden components do not overlap on the top and bottom rectangular structures which makes for a sturdier design.</p>
+                    <p>This was my first experience using any of the woodworking power tools. The long cuts were made with a table saw, the shorter cuts were made with a band saw, handsaw, or a chop saw, and the 90 degree cuts were made with a manual jigsaw. Most of my cuts didn’t really turn out the way I wanted them to – the band saw kind of has a mind of its own, the chop saw takes away half of your wood, etc – but this only further contributed to my learning experience. I assembled the contents of the textbook cover using wood glue and a nail gun (my favorite tool) and attached them to the legs of the shelf by drilling in some pretty large nails. I also attached the bottom pieces (the ‘feet’) with nails, although I had a lot of issues with knots since these pieces were very thin. Finally, the top part was assembled using wood glue and attached to the legs using the nail gun.</p>
+                    <p>Overall, I think the shelf turned out alright. A lot of the building was rushed and so some components aren't as secure as I'd like them to be. Also, due to my lack of experience with the power tools, components weren't exactly their specified dimensions or they were uneven which caused things not to fit together properly. It is fully functional however and has held up nicely for the past few weeks. We’ll see if anyone actually notices the floating books. I’ll keep you updated.</p>
+                </div>
+
+                <div class="shelf-image1-wrapper">
+                    <img src="images/shelf/full.jpg">
+                </div>
+            </div>
+
+
+            <!--_________________________Tab Gallery Start_________________________-->
+            <!-- The grid: four columns -->
+            <div class="row">
+                <div class="shelf-column">
+                    <img src="images/shelf/drawing.png" alt="Drawing of shelf (incorrect dimensions)" onclick="myFunction(this);">
+                </div>
+                <div class="shelf-column">
+                    <img src="images/shelf/measurements.png" alt="Plan for cuts" onclick="myFunction(this);">
+                </div>
+                <div class="shelf-column">
+                    <img src="images/shelf/board.jpg" alt="Plank with markings for cuts" onclick="myFunction(this);">
+                </div>
+                <div class="shelf-column">
+                    <img src="images/shelf/topless.jpg" alt="Partially assembled shelf" onclick="myFunction(this);">
+                </div>
+                <div class="shelf-column">
+                    <img src="images/shelf/side.jpg" alt="Side view" onclick="myFunction(this);">
+                </div>
+                <div class="shelf-column">
+                    <img src="images/shelf/top.jpg" alt="Top view" onclick="myFunction(this);">
+                </div>
+                <div class="shelf-column">
+                    <img src="images/shelf/workin.jpg" alt="Action shot" onclick="myFunction(this);">
+                </div>
+            </div>
+
+            <!-- The expanding image container -->
+            <div class="expanded-wrapper">
+                <!-- Close the image -->
+                <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+                
+                <!-- Expanded image -->
+                <img id="expandedImg">
+
+                <!-- Image text -->
+                <div id="imgtext"></div>
+            </div>
+            <!--_________________________Tab Gallery End_________________________-->
+        </div>
+    </div>
+</body>
+<script>
+    // _________________________Tab Gallery Start_________________________
+    function myFunction(imgs) {
+        // Get the expanded image
+        var expandImg = document.getElementById("expandedImg");
+        // Get the image text
+        var imgText = document.getElementById("imgtext");
+        // Use the same src in the expanded image as the image being clicked on from the grid
+        expandImg.src = imgs.src;
+        // Use the value of the alt attribute of the clickable image as text inside the expanded image
+        imgText.innerHTML = imgs.alt;
+        // Show the container element (hidden with CSS)
+        expandImg.parentElement.style.display = "block";
+    }
+    // _________________________Tab Gallery End_________________________
+</script>
+</html>

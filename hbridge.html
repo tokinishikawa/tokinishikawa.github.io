@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='UTF-8'>
+    <title>H-bridge</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="nav-wrapper">
+            <div class="left-side">
+                <div class="nav-link-wrapper active-nav-link">
+                    <a href="index.html">Engineering</a>
+                </div>
+
+                <div class="nav-link-wrapper">
+                    <a href="physics.html">Physics</a>
+                </div>
+
+                <div class="nav-link-wrapper">
+                    <a href="about.html">About</a>
+                </div>
+            </div>
+
+            <div class="right-side">
+                <div class="brand">
+                    <div>TOKI NISHIKAWA</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-wrapper">
+            <div class="project-title-wrapper">
+                <h1>H-bridge</h1>
+            </div>
+            <div class="project-description-wrapper">
+                <h1>Project Description</h1>
+                <p>In my Electromechanical Systems & Robotics I course, I designed an H-bridge circuit on KiCad. Since this circuit can make a DC motor spin in both directions, it can be used to change the direction of a wheel. When my group and I built our robot later that year, we used two H-bridge circuits for each of the two wheels that we needed to power. Images of the prototype, the schematic, the layout of the PCB, and a 3D view of the PCB can be found below. Note that clicking on the images below will enlarge them – just scroll down.</p>
+            </div>
+
+
+            <!--_________________________Tab Gallery Start_________________________-->
+            <!-- The grid: four columns -->
+            <div class="row">
+                <div class="robot-column">
+                    <img src="images/hbridge/p1.png" alt="Prototype on a breadboard" onclick="myFunction(this);">
+                </div>
+                <div class="robot-column">
+                    <img src="images/hbridge/p2.png" alt="Schematic of the circuit" onclick="myFunction(this);">
+                </div>
+                <div class="robot-column">
+                    <img src="images/hbridge/p3.png" alt="Layout of the PCB" onclick="myFunction(this);">
+                </div>
+                <div class="robot-column">
+                    <img src="images/hbridge/p4.png" alt="3D view of the PCB" onclick="myFunction(this);">
+                </div>
+            </div>
+
+            <!-- The expanding image container -->
+            <div class="expanded-wrapper">
+                <!-- Close the image -->
+                <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+                
+                <!-- Expanded image -->
+                <img id="expandedImg">
+
+                <!-- Image text -->
+                <div id="imgtext"></div>
+            </div>
+            <!--_________________________Tab Gallery End_________________________-->
+        </div>
+    </div>
+</body>
+<script>
+    // _________________________Tab Gallery Start_________________________
+    function myFunction(imgs) {
+        // Get the expanded image
+        var expandImg = document.getElementById("expandedImg");
+        // Get the image text
+        var imgText = document.getElementById("imgtext");
+        // Use the same src in the expanded image as the image being clicked on from the grid
+        expandImg.src = imgs.src;
+        // Use the value of the alt attribute of the clickable image as text inside the expanded image
+        imgText.innerHTML = imgs.alt;
+        // Show the container element (hidden with CSS)
+        expandImg.parentElement.style.display = "block";
+    }
+    // _________________________Tab Gallery End_________________________
+</script>
+</html>

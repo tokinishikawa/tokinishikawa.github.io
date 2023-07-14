@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='UTF-8'>
+    <title>Robot</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="nav-wrapper">
+            <div class="left-side">
+                <div class="nav-link-wrapper active-nav-link">
+                    <a href="index.html">Engineering</a>
+                </div>
+
+                <div class="nav-link-wrapper">
+                    <a href="physics.html">Physics</a>
+                </div>
+
+                <div class="nav-link-wrapper">
+                    <a href="about.html">About</a>
+                </div>
+            </div>
+
+            <div class="right-side">
+                <div class="brand">
+                    <div>TOKI NISHIKAWA</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-wrapper">
+            <div class="project-title-wrapper">
+                <h1>Robot</h1>
+                <video width="960" height="540" controls>
+                    <source src="videos/robot.mp4" type="video/mp4">
+                    Your browser does not support mp4 videos, change browser!
+                </video>
+            </div>
+
+            <div class="two-column-wrapper">
+                <div class="project-description-wrapper">
+                    <h1>Project Description</h1>
+                    <p>In my Electromechanical Systems & Robotics I course, my team and I constructed a robot controlled by a Raspberry Pi. The robot served two functions: high-fiving people and riding elevators. We assumed that the hand of the high-five recipient would be positioned at elevator-button height, accounting for an “up-high” when the recipient is sitting and a “down-low” when the recipient is standing. During our final class, all of the robots had to attempt an obstacle course set up in the Science & Engineering Complex. In the image on the right, our robot sits at the start line waiting to high-five an eager Professor Stafford (the elbow in the bottom right corner). Following the successful completion of the high-five, our robot traversed the ground floor of the SEC before riding the elevator up to the first floor.</p>
+                    <p>Our robot featured two-wheel drive where the third wheel at the front was left to rotate freely. The back two wheels were powered by two brushed DC motors, each of which was connected to an H-bridge circuit so that the wheels could spin in both directions. Since the robot was wireless and controlled through Wi-Fi, the voltage required to power the motors was drawn from a battery – the same goes for the Raspberry Pi. We coded four different settings (forward, backward, left turn, and right turn) which were ultimately displayed as links on a website allowing the robot to be controlled from my laptop. Note that clicking on the images below will enlarge them – just scroll down.</p>
+                </div>
+
+                <div class="robot-image1-wrapper">
+                    <img src="images/robot/content.png">
+                </div>
+            </div>
+
+            <!--_________________________Tab Gallery Start_________________________-->
+            <!-- The grid: four columns -->
+            <div class="row">
+                <div class="robot-column">
+                    <img src="images/robot/p2.png" alt="Teams and high-five recipients at the ready" onclick="myFunction(this);">
+                </div>
+                <div class="robot-column">
+                    <img src="images/robot/p3.png" alt="Robots at the start line" onclick="myFunction(this);">
+                </div>
+                <div class="robot-column">
+                    <img src="images/robot/g1.gif" alt="Going to high-five Professor Stafford" onclick="myFunction(this);">
+                </div>
+                <div class="robot-column">
+                    <img src="images/robot/g2.gif" alt="Neck and neck with the opposition" onclick="myFunction(this);">
+                </div>
+            </div>
+
+            <!-- The expanding image container -->
+            <div class="expanded-wrapper">
+                <!-- Close the image -->
+                <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+                
+                <!-- Expanded image -->
+                <img id="expandedImg">
+
+                <!-- Image text -->
+                <div id="imgtext"></div>
+            </div>
+            <!--_________________________Tab Gallery End_________________________-->
+        </div>
+    </div>
+</body>
+<script>
+    // _________________________Tab Gallery Start_________________________
+    function myFunction(imgs) {
+        // Get the expanded image
+        var expandImg = document.getElementById("expandedImg");
+        // Get the image text
+        var imgText = document.getElementById("imgtext");
+        // Use the same src in the expanded image as the image being clicked on from the grid
+        expandImg.src = imgs.src;
+        // Use the value of the alt attribute of the clickable image as text inside the expanded image
+        imgText.innerHTML = imgs.alt;
+        // Show the container element (hidden with CSS)
+        expandImg.parentElement.style.display = "block";
+    }
+    // _________________________Tab Gallery End_________________________
+</script>
+</html>
