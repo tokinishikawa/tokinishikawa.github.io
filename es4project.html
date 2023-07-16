@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='UTF-8'>
+    <title>Reaction Game</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="nav-wrapper">
+            <div class="left-side">
+                <div class="nav-link-wrapper active-nav-link">
+                    <a href="index.html">Engineering</a>
+                </div>
+
+                <div class="nav-link-wrapper">
+                    <a href="physics.html">Physics</a>
+                </div>
+
+                <div class="nav-link-wrapper">
+                    <a href="about.html">About</a>
+                </div>
+            </div>
+
+            <div class="right-side">
+                <div class="brand">
+                    <div>TOKI NISHIKAWA</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-wrapper">
+            <div class="project-title-wrapper">
+                <h1>Reaction Game</h1>
+                <video width="960" height="540" controls>
+                    <source src="videos/es4project.mp4" type="video/mp4">
+                    Your browser does not support mp4 videos, change browser!
+                </video>
+            </div>
+
+            <div class="two-column-wrapper">
+                <div class="project-description-wrapper">
+                    <h1>Project Description</h1>
+                    <p>My team and I designed and constructed a reaction game using the iCE40 FPGA. The user watches a repeating animation and presses a button at a specific point in the animation to score points. The animation consists of 1 segment of a 7 segment display going in a clockwise loop. The user can adjust the difficulty between four different animation speeds using two switches. We used one seven segment display to show the animation and another to display the user's score. We used a push button switch to collect user input. The score is represented by a hexadecimal digit which automatically overflows from F (15) to 0. Additionally, the score can be reset to 0 at any time by pressing the reset button.</p>
+                    <div class="link-wrapper">
+                        <p>Here is a link to our final report: <a href="./engineeringfiles/ES4_Final_Report.pdf" download> <strong>Reaction Game Using iCE40 FPGA (Dec 2022)</strong></a></p>
+                    </div>
+                    <p>Note that clicking on the images below will enlarge them – just scroll down.</p>
+                </div>
+
+                <div class="es4project-image1-wrapper">
+                    <img src="images/es4project/p2.png">
+                </div>
+            </div>
+
+            <!--_________________________Tab Gallery Start_________________________-->
+            <!-- The grid: four columns -->
+            <div class="row">
+                <div class="es4project-column">
+                    <img src="images/es4project/p3.png" alt="" onclick="myFunction(this);">
+                </div>
+                <div class="es4project-column">
+                    <img src="images/es4project/p4.png" alt="" onclick="myFunction(this);">
+                </div>
+                <div class="es4project-column">
+                    <img src="images/es4project/p5.png" alt="" onclick="myFunction(this);">
+                </div>
+                <div class="es4project-column">
+                    <img src="images/es4project/p6.png" alt="" onclick="myFunction(this);">
+                </div>
+                <div class="es4project-column">
+                    <img src="images/es4project/p7.png" alt="" onclick="myFunction(this);">
+                </div>
+            </div>
+
+            <!-- The expanding image container -->
+            <div class="expanded-wrapper">
+                <!-- Close the image -->
+                <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+                
+                <!-- Expanded image -->
+                <img id="expandedImg">
+
+                <!-- Image text -->
+                <div id="imgtext"></div>
+            </div>
+            <!--_________________________Tab Gallery End_________________________-->
+        </div>
+    </div>
+</body>
+<script>
+    // _________________________Tab Gallery Start_________________________
+    function myFunction(imgs) {
+        // Get the expanded image
+        var expandImg = document.getElementById("expandedImg");
+        // Get the image text
+        var imgText = document.getElementById("imgtext");
+        // Use the same src in the expanded image as the image being clicked on from the grid
+        expandImg.src = imgs.src;
+        // Use the value of the alt attribute of the clickable image as text inside the expanded image
+        imgText.innerHTML = imgs.alt;
+        // Show the container element (hidden with CSS)
+        expandImg.parentElement.style.display = "block";
+    }
+    // _________________________Tab Gallery End_________________________
+</script>
+</html>
